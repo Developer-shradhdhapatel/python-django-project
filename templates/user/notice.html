@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all notices</title>
+    <link rel="stylesheet" href="{% static 'user/css/style.css'%}">
+</head>
+<body>
+    <div class="header">
+        <h1 align="center">Notice Hub - Web App</h1>
+    </div>
+    
+    <div class="content">
+        <h1 align="center" style="text-decoration: underline;color: black">Latest Notices</h1>
+
+        {% for row in result %}
+        <div class='notice'>
+            <h3>{{row.subject}} </h3>
+            <p>
+                {{row.descriptions}}
+            </p>
+            <p>created at: {{row.created_at}}</p>
+            <p>updated at: {{row.updated_at}}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+    
+    <div class="footer">
+        <h1 align="center">&copy; 2025 NoticeHub | All Rights Reserved | Built with Django 💻
+        </h1>
+    </div>
+    
+</body>
+</html>
